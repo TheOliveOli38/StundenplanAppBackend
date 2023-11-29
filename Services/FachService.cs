@@ -18,7 +18,6 @@ namespace StundenplanApp.Services
                 Name = newSubject.Name,
                 Raum = newSubject.Raum,
                 Lehrkraft = newSubject.Lehrkraft,
-                Klasse = newSubject.Klasse,
             };
             await dataContext.Faecher.AddAsync(subject);
             await dataContext.SaveChangesAsync();
@@ -35,7 +34,6 @@ namespace StundenplanApp.Services
             subject.Name = subjectToEdit.Name;
             subject.Raum = subjectToEdit.Raum;
             subject.Lehrkraft = subjectToEdit.Lehrkraft;
-            subject.Klasse = subjectToEdit.Klasse;
             dataContext.Faecher.Update(subject);
             dataContext.SaveChangesAsync();
             return subject;
